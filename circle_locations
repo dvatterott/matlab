@@ -11,8 +11,6 @@ angles = (0:n-1) * dAngle + (degtorad(start_jitter));
 [xPos, yPos] = pol2cart(angles, Radius); % convert
 %back to Cartesian
 % translate to new center
-% xPos = round(xPos);
-% yPos = round(yPos);
 xPos = xPos + cx;
 yPos = yPos + cy;
 xPos = xPos';
