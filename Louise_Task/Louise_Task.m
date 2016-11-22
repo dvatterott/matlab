@@ -1,6 +1,7 @@
 %seed the random number generator
 rand('twister',sum(100*clock)) 
 
+%notice that this will change for each user!!
 cd ~/Documents/Louise_Task/
 addpath('./Functions')
 
@@ -42,8 +43,11 @@ for i = 1 : length(Letters)
     %wait for response
     fun_waitSpecificKeyPress(Letters{i});
     
+    %clear screen
     Screen(window, 'FillRect', Black);
     Screen('Flip',window);
+    
+    %ITI
     WaitSecs(0.5);
 end
 
