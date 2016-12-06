@@ -22,15 +22,15 @@ fpDiameter_inPixels                         = degrees2pixels(fpDiameter_inDegree
 fpColor                                     = White;
 
 %present letters
-Letters                                     = {'A','B','C','D','Z'};
+Letters                                     = {'A','B','C','D'};
 Letter_order                                = Shuffle(1:length(Letters));
 Letters                                     = Letters(Letter_order);
 LetterColor                                 = White;
 
 %number of dots corrupting the letter presentation
-scramble_num                                = 500;
+scramble_num                                = 50;
 Screen('TextSize', window, 36);
-dotcolor                                    = White;
+dotcolor                                    = [0,0,0];
 
 for i = 1 : length(Letters)
     
@@ -44,7 +44,7 @@ for i = 1 : length(Letters)
     %draw text
     DrawFormattedText(window,Letters{i},'center','center',LetterColor);
     for scramble = 1 : scramble_num
-        Screen('DrawDots',window,center-(rand(1,2)-0.5)*50,1,dotcolor,[0,0],1);
+        Screen('DrawDots',window,center-(rand(1,2)-0.5)*50,1,[255,255,255],[0,0],1);
     end
     Screen('Flip',window);
     
