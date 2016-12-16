@@ -27,12 +27,12 @@ player = audioplayer(sound, Fs); %this is probably not the most precise timing w
 play(player);
 
 %create fence stim
-new_sound = create_FenceStim(sound,Fs,200);
+new_sound = create_FenceStim(sound,Fs,200); %the final number here is the space between sound break
 player = audioplayer(new_sound, Fs); 
 play(player);
 
 %create pink noise stim
-pink_sound = pinknoise(Fs, ceil(length(sound)/Fs), 0);
+pink_sound = pinknoise(Fs, ceil(length(sound)/Fs), 0); %the final number is how loud the pink noise should be
 pink_sound = pink_sound(1:length(sound));
 pink_sound = sound+pink_sound';
 player = audioplayer(pink_sound, Fs); 
